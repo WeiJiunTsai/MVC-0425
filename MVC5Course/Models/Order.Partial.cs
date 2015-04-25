@@ -13,6 +13,7 @@ namespace MVC5Course.Models
     {
         [Required]
         public int OrderId { get; set; }
+        
         public Nullable<int> ClientId { get; set; }
         public Nullable<System.DateTime> OrderDate { get; set; }
         public Nullable<decimal> OrderTotal { get; set; }
