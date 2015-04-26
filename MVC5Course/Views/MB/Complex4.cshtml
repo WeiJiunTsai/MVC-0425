@@ -1,0 +1,55 @@
+﻿@model IEnumerable<MVC5Course.Models.SimpleViewModel>
+
+@{
+    ViewBag.Title = "Complex4";
+}
+
+<h2>Complex4</h2>
+
+
+@using (Html.BeginForm()) 
+{
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PassWord)
+        </th>
+    
+        <th>
+            @Html.DisplayNameFor(model => model.age)
+        </th>
+        <th></th>
+    </tr>
+
+    @{var item = Model.ToArray();}
+
+@for (int i = 0; i < item.Length; i++ )
+{
+    <tr>
+        <td>
+            @Html.EditorFor(modelItem => item[i].UserName)
+        </td>
+        <td>
+            @Html.EditorFor(modelItem => item[i].PassWord)
+        </td>
+       
+        <td>
+            @Html.EditorFor(modelItem => item[i].age)
+        </td>
+ 
+    </tr>
+}
+
+</table>
+    
+    
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Update" class="btn btn-default" />
+        </div>
+    </div>
+   
+}
