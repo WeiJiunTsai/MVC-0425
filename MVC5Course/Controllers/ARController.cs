@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace MVC5Course.Controllers
 {
-    public class ARController : Controller
+    public class ARController : BaseController
     {
         // GET: AR
         public ActionResult Index()
@@ -17,7 +17,7 @@ namespace MVC5Course.Controllers
 
         public ActionResult view1()
         {
-            return View("view22");
+            return View();
         }
 
         public ActionResult view2()
@@ -60,6 +60,34 @@ namespace MVC5Course.Controllers
         {
             byte[] content = System.IO.File.ReadAllBytes(Server.MapPath("~/Content/pic1.png"));
             return File(content, "image/png","pic5.png");
+        }
+
+        public ActionResult JavaScript1()
+        {
+            return JavaScript("alert('JS')");
+        }
+
+        public ActionResult Json1()
+        {
+            db.Configuration.LazyLoadingEnabled = false;
+
+            var data = db.Product.Take(10);
+            return Json(data,JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult Redirect()
+        {
+            return RedirectToActionPermanent("View1");
+        }
+
+        public ActionResult Redirect2()
+        {
+            return RedirectToAction("View1");
+        }
+
+        public ActionResult HttpNotFound1()
+        {
+            return HttpNotFound();
         }
     }
 }
