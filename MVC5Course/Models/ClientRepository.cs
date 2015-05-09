@@ -18,7 +18,19 @@ namespace MVC5Course.Models
         {
             return this.All().FirstOrDefault(p => p.ClientId == id);
         }
-	}
+
+        internal IQueryable<Client> SearchByCity(string city)
+        {
+            if (String.IsNullOrEmpty(city))
+            {
+                return this.All();
+            }
+            else
+            {
+                return this.All().Where(p => p.City == city).Take(10);
+            }
+        }
+    }
 
 	public  interface IClientRepository : IRepository<Client>
 	{
