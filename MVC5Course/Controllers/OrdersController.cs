@@ -14,10 +14,14 @@ namespace MVC5Course.Controllers
     {
 
         // GET: Orders
-        public ActionResult Index()
+        public ActionResult Index(int ClientID = 0)
         {
             var order = db.Order.Include(o => o.Client);
-            return View(order.ToList());
+            if (ClientID > 0)
+            {
+                order = order.Where(p => p.ClientId == ClientID);
+            }
+            return PartialView(order.ToList());
         }
 
         // GET: Orders/Details/5
