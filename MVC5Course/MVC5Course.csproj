@@ -599,10 +599,13 @@
     <Content Include="Views\Metro\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutMetro.cshtml" />
     <Content Include="Views\Clients\OrdersList.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Client.v2.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Client.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Base\" />
     <Folder Include="Views\Default\" />
+    <Folder Include="Views\Shared\EditorTemplates\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
