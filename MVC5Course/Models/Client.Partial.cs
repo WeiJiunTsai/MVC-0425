@@ -53,6 +53,7 @@ namespace MVC5Course.Models
         public Nullable<bool> isDelete { get; set; }
     
         public virtual Occupation Occupation { get; set; }
+        [UIHint("OrdersList")]
         public virtual ICollection<Order> Order { get; set; }
     }
 }
